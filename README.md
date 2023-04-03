@@ -37,7 +37,7 @@ lastName: "SR."
 phoneNumber: 9817263648
 
 # Second Test:
-" It should return the first name and last name concatenated together"
+" It should return the first name and last name concatenated together."
 # Code:
 let userName = new Contact("Bob", "SR.", 9817263648);
 userName.fullName();
@@ -45,11 +45,12 @@ userName.fullName();
 Bob SR.
 
 # Third Test:
-"It should create an empty contacts constructor"
+"It should create an empty contacts constructor."
 # Code:
 AddressBook
 # Expected Output:
 this.contacts = {};
+
 
 # Describe: Contact()
 

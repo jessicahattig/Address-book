@@ -8,6 +8,11 @@ function AddressBook() {
   this.contacts = {};
 }
 
+AddressBook.prototype.addContact = function(contact) {
+  contact.id = this.assignId();
+  this.contact[contact.id] = contact;
+};
+
 // Business Logic for Contacts ---------
 function Contact(firstName, lastName, phoneNumber) {
   this.firstName = firstName;
@@ -26,10 +31,6 @@ function AddressBook(event) {
   this.contacts = {};
   this.currentId = 0;
   event.preventDefault();
-};
-AddressBook.prototype.addContact = function(contact) {
-  contact.id = this.assignId();
-  this.contact[contact.id] = contact;
 };
 
 AddressBook.prototype.assignId = function() {

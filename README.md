@@ -26,18 +26,32 @@ _This application practices using constructors and prototypes to create a addres
 
 # Describe: AddressBook()
 
-# Test:
-"It should output contact."
-# Code:
-addressBook("bob");
-# Expected Output:
-'bob'
-
-# Test:
+# First Test:
 " It should output all three inputs (first name, last name and phone number) after they are entered."
 # Code:
-
+let userName = new Contact("Bob", "SR.", 9817263648);
+userName;
 # Expected Output:
+firstName: "Bob"
+lastName: "SR."
+phoneNumber: 9817263648
+
+# Second Test:
+" It should return the first name and last name concatenated together"
+# Code:
+let userName = new Contact("Bob", "SR.", 9817263648);
+userName.fullName();
+# Expected Output:
+Bob SR.
+
+# Third Test:
+"It should create an empty contacts constructor"
+# Code:
+AddressBook
+# Expected Output:
+this.contacts = {};
+
+# Describe: Contact()
 
 ## Known Bugs
 

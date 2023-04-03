@@ -4,21 +4,9 @@ window.addEventListener("load", function() {
 })
 
 // Business Logic for AddressBook ---------
-function AddressBook(event) {
+function AddressBook() {
   this.contacts = {};
-  this.currentId = 0;
-  event.preventDefault();
-  console.log(event);
-};
-AddressBook.prototype.addContact = function(contact) {
-  contact.id = this.assignId();
-  this.contact[contact.id] = contact;
-};
-
-AddressBook.prototype.assignId = function() {
-  this.currentId += 1;
-  return this.currentId;
-};
+}
 
 // Business Logic for Contacts ---------
 function Contact(firstName, lastName, phoneNumber) {
@@ -32,17 +20,19 @@ Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 };
 
-//Business logic, variables
-let firstName = "firstName";
-let lastName = "lastName";
-let phoneNumber = "phoneNumber";
+/// Not in code
 
+function AddressBook(event) {
+  this.contacts = {};
+  this.currentId = 0;
+  event.preventDefault();
+};
+AddressBook.prototype.addContact = function(contact) {
+  contact.id = this.assignId();
+  this.contact[contact.id] = contact;
+};
 
-//UI Logic
-//TESTS
-function AddressBook(contact) {
-  const contacts = {};
-  contacts.push(contact);
-  let currentId += 1;
-  return currentId;
+AddressBook.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
 };

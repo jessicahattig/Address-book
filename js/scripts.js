@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
   const form = document.getElementById("AddressBook");
-  form.addEventListener("click",AddressBook);
+  form.addEventListener("submit",AddressBook);
 })
 
 // Business Logic for AddressBook ---------
@@ -8,8 +8,8 @@ function AddressBook(event) {
   this.contacts = {};
   this.currentId = 0;
   event.preventDefault()
+  console.log(event)
 }
-
 AddressBook.prototype.addContact = function(contact) {
   contact.id = this.assignId();
   this.contacts[contact.id] = contact;

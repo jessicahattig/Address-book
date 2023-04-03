@@ -7,8 +7,8 @@ window.addEventListener("load", function() {
 function AddressBook(event) {
   this.contacts = {};
   this.currentId = 0;
-  event.preventDefault()
-  console.log(event)
+  event.preventDefault();
+  console.log(event);
 }
 AddressBook.prototype.addContact = function(contact) {
   contact.id = this.assignId();
@@ -25,10 +25,17 @@ function Contact(firstName, lastName, phoneNumber) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
+  console.log(Contact);
 }
 
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 };
+
+//Business logic, variables
+let firstName = "firstName";
+let lastName = "lastName";
+let phoneNumber = "phoneNumber";
+
 
 //UI Logic

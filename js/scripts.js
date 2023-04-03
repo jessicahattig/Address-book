@@ -1,7 +1,13 @@
+window.addEventListener("load", function() {
+  const form = document.getElementById("AddressBook");
+  form.addEventListener("click",AddressBook);
+})
+
 // Business Logic for AddressBook ---------
-function AddressBook() {
+function AddressBook(event) {
   this.contacts = {};
   this.currentId = 0;
+  event.preventDefault()
 }
 
 AddressBook.prototype.addContact = function(contact) {
@@ -24,3 +30,5 @@ function Contact(firstName, lastName, phoneNumber) {
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 };
+
+//UI Logic

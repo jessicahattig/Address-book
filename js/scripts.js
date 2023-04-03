@@ -9,10 +9,10 @@ function AddressBook(event) {
   this.currentId = 0;
   event.preventDefault();
   console.log(event);
-}
+};
 AddressBook.prototype.addContact = function(contact) {
   contact.id = this.assignId();
-  this.contacts[contact.id] = contact;
+  this.contact[contact.id] = contact;
 };
 
 AddressBook.prototype.assignId = function() {
@@ -39,3 +39,10 @@ let phoneNumber = "phoneNumber";
 
 
 //UI Logic
+//TESTS
+function AddressBook(contact) {
+  const contacts = {};
+  contacts.push(contact);
+  let currentId += 1;
+  return currentId;
+};

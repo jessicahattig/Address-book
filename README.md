@@ -26,6 +26,18 @@ _This application practices using constructors and prototypes to create a addres
 
 # Describe: AddressBook()
 
+# Test:
+"It should output contact."
+# Code:
+addressBook("bob");
+# Expected Output:
+'bob'
+
+# Test:
+" It should output all three inputs (first name, last name and phone number) after they are entered."
+# Code:
+
+# Expected Output:
 
 ## Known Bugs
 

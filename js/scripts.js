@@ -1,44 +1,3 @@
-window.addEventListener("load", function() {
-  const form = document.getElementById("AddressBook");
-  form.addEventListener("submit",AddressBook);
-})
-
-// Business Logic for AddressBook ---------
-function AddressBook() {
-  this.contacts = {};
-}
-
-AddressBook.prototype.addContact = function(contact) {
-  contact.id = this.assignId();
-  this.contact[contact.id] = contact;
-};
-
-// Business Logic for Contacts ---------
-function Contact(firstName, lastName, phoneNumber) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.phoneNumber = phoneNumber;
-  console.log(Contact);
-}
-
-Contact.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName;
-};
-
-function AddressBook(event) {
-  this.contacts = {};
-  this.currentId = 0;
-  event.preventDefault();
-};
-
-/// Not in code
-
-AddressBook.prototype.assignId = function() {
-  this.currentId += 1;
-  return this.currentId;
-};
-
--------------
 // Business Logic for AddressBook ---------
 function AddressBook() {
   this.contacts = {};
@@ -80,3 +39,20 @@ function Contact(firstName, lastName, phoneNumber) {
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 };
+
+// User Interface Logic ---------
+let addressBook = new AddressBook();
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const inputtedFirstName = document.querySelector("input#new-first-name").value;
+  const inputtedLastName = document.querySelector("input#new-last-name").value;
+  const inputtedPhoneNumber = document.querySelector("input#new-phone-number").value;
+  let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+  addressBook.addContact(newContact);
+  console.log(addressBook.contacts);
+}
+
+window.addEventListener("load", function (){
+  document.querySelector("form#new-contact").addEventListener("submit", handleFormSubmission);
+});
